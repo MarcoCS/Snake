@@ -31,7 +31,7 @@ def newApple(): # Creates an apple
     a = Apple()
     if collision(snake.posx, snake.posy, a.rect.x, a.rect.y): # if the apple somehow spawns within the snake
         a.kill() # It will kill itself
-        newApple() # Then create a new apple
+        newApple() # Then calls itself recursively until it doesn't spawn in itself.
     else:      # If it doesn't spawn within the snake, then we're all good.
         all_sprites.add(a) 
         apples.add(a)
